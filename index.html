@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宋嘉睿 | 3D建模实习生 Unity开发实习生 个人作品集</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#10b981',
+                        darkbg: '#0f172a',
+                        cardbg: '#1e293b',
+                        accent: '#38bdf8'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-gradient {
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+                background-image: linear-gradient(135deg,#38bdf8,#2563eb);
+            }
+            .card-glow {
+                box-shadow: 0 0 22px rgba(56,189,248,0.15);
+            }
+            .animate-float{
+                animation: float 6s ease-in-out infinite;
+            }
+            .scroll-fade{
+                opacity:0;
+                transform: translateY(40px);
+                transition: all 0.7s ease-out;
+            }
+            .scroll-fade.active{
+                opacity:1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes float {
+            0%,100% {transform: translateY(0px);}
+            50% {transform: translateY(-12px);}
+        }
+        ::-webkit-scrollbar{
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track{
+            background:#0f172a;
+        }
+        ::-webkit-scrollbar-thumb{
+            background:#2563eb;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="bg-darkbg text-gray-100 min-h-screen">
+<header class="fixed w-full top-0 z-50 bg-darkbg/85 backdrop-blur-md border-b border-slate-700">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
+        <div class="text-xl font-bold text-gradient">宋嘉睿 · Portfolio</div>
+        <nav class="hidden md:flex gap-8 text-sm">
+            <a href="#about" class="hover:text-accent transition-colors"><i class="fa fa-user mr-1"></i>关于我</a>
+            <a href="#edu" class="hover:text-accent transition-colors"><i class="fa fa-graduation-cap mr-1"></i>教育背景</a>
+            <a href="#skill" class="hover:text-accent transition-colors"><i class="fa fa-cogs mr-1"></i>专业技能</a>
+            <a href="#project" class="hover:text-accent transition-colors"><i class="fa fa-folder-open mr-1"></i>项目经历</a>
+            <a href="#contact" class="hover:text-accent transition-colors"><i class="fa fa-envelope mr-1"></i>联系我</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden text-xl">
+            <i class="fa fa-bars"></i>
+        </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-cardbg border-t border-slate-700">
+        <div class="flex flex-col px-6 py-4 gap-4">
+            <a href="#about" class="hover:text-accent"><i class="fa fa-user mr-1"></i>关于我</a>
+            <a href="#edu" class="hover:text-accent"><i class="fa fa-graduation-cap mr-1"></i>教育背景</a>
+            <a href="#skill" class="hover:text-accent"><i class="fa fa-cogs mr-1"></i>专业技能</a>
+            <a href="#project" class="hover:text-accent"><i class="fa fa-folder-open mr-1"></i>项目经历</a>
+            <a href="#contact" class="hover:text-accent"><i class="fa fa-envelope mr-1"></i>联系我</a>
+        </div>
+    </div>
+</header>
+
+<section id="about" class="pt-28 pb-20 px-4 md:px-6 max-w-7xl mx-auto scroll-fade">
+    <div class="grid md:grid-cols-5 gap-8 items-center">
+        <div class="md:col-span-2 flex justify-center">
+            <div class="relative animate-float">
+                <div class="w-64 h-72 rounded-xl border-2 border-accent card-glow bg-gradient-to-br from-slate-800 to-slate-900 flex flex-col items-center justify-center">
+                    <i class="fa fa-user-circle text-8xl text-accent mb-3"></i>
+                    <div class="text-lg font-semibold text-gradient">宋嘉睿</div>
+                    <div class="text-sm text-slate-400 mt-1">3D建模实习生 · Unity开发实习生</div>
+                </div>
+                <div class="absolute -bottom-3 -right-3 bg-primary px-4 py-1 rounded-lg shadow-lg">
+                    <span class="text-sm font-medium">求职中 🎯</span>
+                </div>
+            </div>
+        </div>
+        <div class="md:col-span-3">
+            <h1 class="text-[clamp(2rem,4vw,3rem)] font-bold text-gradient mb-3">宋嘉睿</h1>
+            <h2 class="text-xl md:text-2xl text-accent mb-5">3D建模实习生 / Unity 开发实习生</h2>
+            <div class="grid sm:grid-cols-2 gap-3 text-slate-300 mb-6">
+                <div><i class="fa fa-birthday-cake w-6 text-secondary"></i>出生年月：2005.02</div>
+                <div><i class="fa fa-map-marker w-6 text-secondary"></i>所在地：四川省成都市</div>
+                <div><i class="fa fa-users w-6 text-secondary"></i>民族：汉族｜政治面貌：群众</div>
+                <div><i class="fa fa-language w-6 text-secondary"></i>语言能力：大学英语四级（CET4）</div>
+            </div>
+            <p class="text-slate-300 leading-relaxed mb-6">
+                虚拟现实技术应用在校生，暂无企业实习，实操基础扎实。熟练Blender、3ds Max、Unity、Photoshop，掌握三维建模、UV贴图、场景轻量化、渲染整套工作流程，具备UI审美与视觉把控能力，会使用AI辅助美术制作。执行力强、注重细节，希望以实习身份积累项目经验，适配VR、数字孪生、游戏美术岗位需求。
+            </p>
+            <div class="flex flex-wrap gap-4 mt-4">
+                <a href="#contact" class="bg-primary hover:bg-primary/80 px-6 py-3 rounded-lg transition-all shadow-lg">
+                    <i class="fa fa-paper-plane mr-2"></i>联系我
+                </a>
+                <a href="#project" class="border border-accent px-6 py-3 rounded-lg hover:bg-accent/10 transition-all">
+                    <i class="fa fa-eye mr-2"></i>查看项目经历
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="edu" class="py-16 bg-cardbg/40 px-4 md:px-6">
+    <div class="max-w-7xl mx-auto scroll-fade">
+        <div class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gradient inline-block"><i class="fa fa-graduation-cap mr-2"></i>教育背景</h2>
+            <div class="h-1 w-20 bg-accent mt-2 rounded"></div>
+        </div>
+        <div class="border-l-2 border-accent pl-6 py-2">
+            <div class="bg-cardbg p-6 rounded-xl card-glow">
+                <div class="flex flex-wrap justify-between items-center mb-3">
+                    <h3 class="text-xl font-semibold">成都职业技术学院｜虚拟现实技术应用 大专</h3>
+                    <span class="text-accent font-medium">2024.09‑至今</span>
+                </div>
+                <div class="mt-3">
+                    <h4 class="text-sm text-secondary mb-2">专业核心课程：</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-darkbg px-3 py-1 rounded text-sm">综合项目开发</span>
+                        <span class="bg-darkbg px-3 py-1 rounded text-sm">数字化模型与动画</span>
+                        <span class="bg-darkbg px-3 py-1 rounded text-sm">游戏道具建模</span>
+                        <span class="bg-darkbg px-3 py-1 rounded text-sm">虚拟现实程序设计</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="skill" class="py-20 px-4 md:px-6 max-w-7xl mx-auto scroll-fade">
+    <div class="mb-10">
+        <h2 class="text-2xl md:text-3xl font-bold text-gradient"><i class="fa fa-cogs mr-2"></i>专业技能</h2>
+        <div class="h-1 w-20 bg-accent mt-2 rounded"></div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-cardbg p-6 rounded-xl card-glow">
+            <h3 class="text-xl font-semibold mb-4">技能掌握程度</h3>
+            <canvas id="skillChart" height="320"></canvas>
+        </div>
+        <div class="bg-cardbg p-6 rounded-xl card-glow space-y-6">
+            <div>
+                <h4 class="text-accent font-semibold mb-2"><i class="fa fa-cube mr-1"></i>三维建模</h4>
+                <p class="text-slate-300 text-sm">熟练使用 3ds Max、Blender，独立完成高低模制作、布线规范、拓扑优化、UV拆分、贴图烘焙，擅长场景资产、道具建模。</p>
+            </div>
+            <div>
+                <h4 class="text-accent font-semibold mb-2"><i class="fa fa-gamepad mr-1"></i>Unity 开发</h4>
+                <p class="text-slate-300 text-sm">掌握Unity2D，独立完成小游戏项目，资源管理、多场景搭建、Tilemap、碰撞体与基础交互调试；可使用AI完成素材重绘统一美术风格。</p>
+            </div>
+            <div>
+                <h4 class="text-accent font-semibold mb-2"><i class="fa fa-paint-brush mr-1"></i>视觉设计</h4>
+                <p class="text-slate-300 text-sm">具备UI审美，擅长配色、版式把控；Photoshop绘制贴图、图标制作、素材调色，重视模型质感和画面统一度。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="project" class="py-20 bg-cardbg/40 px-4 md:px-6">
+    <div class="max-w-7xl mx-auto scroll-fade">
+        <div class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gradient"><i class="fa fa-folder-open mr-2"></i>项目经历</h2>
+            <div class="h-1 w-20 bg-accent mt-2 rounded"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-cardbg rounded-xl overflow-hidden card-glow group hover:shadow-[0_0_30px_rgba(56,189,248,0.25)] transition-all duration-500">
+                <div class="h-52 bg-darkbg relative overflow-hidden">
+                    <img alt="2D闯关游戏" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition duration-700" src="./tr.png">
+                    <div class="absolute bottom-2 left-3 bg-primary/70 px-3 py-1 rounded text-xs">个人独立项目｜Unity2D</div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">2D 多场景闯关小游戏</h3>
+                    <div class="flex gap-2 flex-wrap mb-4">
+                        <span class="bg-darkbg px-2 py-1 rounded text-xs">Unity</span>
+                        <span class="bg-darkbg px-2 py-1 rounded text-xs">Tilemap</span>
+                        <span class="bg-darkbg px-2 py-1 rounded text-xs">游戏交互</span>
+                        <span class="bg-darkbg px-2 py-1 rounded text-xs">AI素材重绘</span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        独立开发完整2D闯关小游戏，整理项目资源，搭建多套关卡，完成Tilemap地图、角色移动碰撞交互；自主设计UI界面，使用AI统一整套美术风格；资源压缩优化，保证场景切换流畅稳定。
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-cardbg rounded-xl overflow-hidden card-glow group hover:shadow-[0_0_30px_rgba(56,189,248,0.25)] transition-all duration-500">
+                <div class="h-52 bg-darkbg relative overflow-hidden">
+                    <img alt="公园场景" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition duration-700" src="./bytvr.png">
+                    <div class="absolute bottom-2 left-3 bg-secondary/70 px-3 py-1 rounded text-xs">个人独立项目｜Blender场景</div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Blender 户外公园场景</h3>
+                    <div class="flex gap-2 flex-wrap mb-4">
+                        <span class="bg-darkbg px-2 py-1 rounded text-xs">Blender</span>
+                        <span class="bg-darkbg px-2 py-1 rounded text-xs">环境场景</span>
+                        <span class="bg-darkbg px-2 py-1 rounded text-xs">UV材质</span>
+                        <span class="bg-darkbg px-2 py-1 rounded text-xs">模型减面优化</span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Blender搭建公园户外环境，制作地形、步道、植被、休闲小品；完成模型拓扑、UV拆分、材质调节，布置灯光渲染输出效果图；资产轻量化处理，工程文件规范整理。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-20 px-4 md:px-6 max-w-7xl mx-auto scroll-fade">
+    <div class="mb-10">
+        <h2 class="text-2xl md:text-3xl font-bold text-gradient"><i class="fa fa-envelope-open mr-2"></i>联系我</h2>
+        <div class="h-1 w-20 bg-accent mt-2 rounded"></div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-cardbg p-7 rounded-xl card-glow">
+            <h3 class="text-xl font-semibold mb-6">求职联系方式</h3>
+            <div class="space-y-5 text-slate-200">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-primary flex justify-center items-center"><i class="fa fa-phone"></i></div>
+                    <div>
+                        <div class="text-xs text-slate-400">联系电话</div>
+                        <div>180‑1062‑4571</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-primary flex justify-center items-center"><i class="fa fa-envelope"></i></div>
+                    <div>
+                        <div class="text-xs text-slate-400">电子邮箱</div>
+                        <div>3127701686@qq.com</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-primary flex justify-center items-center"><i class="fa fa-map-marker"></i></div>
+                    <div>
+                        <div class="text-xs text-slate-400">所在城市</div>
+                        <div>四川省成都市</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-cardbg p-7 rounded-xl card-glow flex flex-col justify-center">
+            <h3 class="text-xl font-semibold mb-4">期待合作</h3>
+            <p class="text-slate-300 leading-relaxed mb-6">
+                求职意向：3D建模实习生 / Unity开发实习生，可尽快到岗，踏实学习。期望加入团队参与VR、数字孪生、游戏美术项目，期待您的联系！
+            </p>
+            <div class="flex gap-3 flex-wrap">
+                <a href="mailto:3127701686@qq.com" class="bg-secondary hover:bg-secondary/80 px-5 py-3 rounded-lg transition">
+                    <i class="fa fa-send mr-1"></i>发送邮件
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="py-6 border-t border-slate-700 text-center text-slate-400 text-sm">
+    © 宋嘉睿｜3D建模 & Unity 作品集 | 基于 GitHub Pages 部署
+</footer>
+
+<script>
+const menuBtn = document.querySelector('#menuBtn');
+const mobileMenu = document.querySelector('#mobileMenu');
+menuBtn.addEventListener('click',()=>{
+    mobileMenu.classList.toggle('hidden');
+})
+mobileMenu.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>mobileMenu.classList.add('hidden'))
+})
+
+const scrollElements = document.querySelectorAll('.scroll-fade');
+function handleScroll(){
+    scrollElements.forEach(el=>{
+        const rect = el.getBoundingClientRect();
+        if(rect.top < window.innerHeight * 0.85){
+            el.classList.add('active');
+        }
+    })
+}
+window.addEventListener('scroll', handleScroll);
+handleScroll();
+
+const ctx = document.getElementById('skillChart').getContext('2d');
+new Chart(ctx,{
+    type:'radar',
+    data:{
+        labels:['3ds Max','Blender','Unity','PS贴图','拓扑UV','美术审美'],
+        datasets:[{
+            label:'掌握程度',
+            data:[80,75,70,72,78,82],
+            backgroundColor:'rgba(56,189,248,0.15)',
+            borderColor:'#38bdf8',
+            pointBackgroundColor:'#38bdf8'
+        }]
+    },
+    options:{
+        scales:{
+            r:{
+                angleLines:{color:'rgba(255,255,255,0.12)'},
+                grid:{color:'rgba(255,255,255,0.12)'},
+                pointLabels:{color:'#cbd5e1'},
+                ticks:{display:false},
+                suggestedMin:0,
+                suggestedMax:100
+            }
+        },
+        plugins:{
+            legend:{
+                labels:{color:'#e2e8f0'}
+            }
+        }
+    }
+})
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e){
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetEl = document.querySelector(targetId);
+        if(targetEl){
+            targetEl.scrollIntoView({
+                behavior:'smooth'
+            })
+        }
+    })
+})
+</script>
+</body>
+</html>
